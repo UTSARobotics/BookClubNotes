@@ -1,0 +1,11 @@
+version: '3'
+services:
+  bookclub_notes:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    user: "${UID:-1000}:${GID:-1000}"
+    volumes:
+      - ../:/container_workspace
+    ports:
+      - "8888:8888"
